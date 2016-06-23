@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<articles>
+<article>
+    <Id>1</Id>
+    <Name>Domain-Driven Design: Tackling Complexity in the Heart of Software</Name>
+    <Description>If you have even been involved in a software project...</Description>
+    <Price>30.00</Price>
+    <Vat>2.00</Vat>
+    <Image>https://images-na.ssl-images-amazon.com/images/I/515FeOFonQL._SX378_BO1,204,203,200_.jpg</Image>
+  </article>
+</articles>

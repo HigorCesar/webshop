@@ -6,6 +6,7 @@ namespace WebShop.Web.Models
 {
     public class ArticleViewModel
     {
+        public string Id { get; set; }
         public string Name { get; set; }
         public string Image { get; set; }
         public string Description { get; set; }
@@ -16,6 +17,7 @@ namespace WebShop.Web.Models
             if (article == null)
                 throw new ArgumentNullException();
 
+            Id = article.Id;
             Name = article.Name;
             Description = article.Description;
             if (article.Description.Length > 100)

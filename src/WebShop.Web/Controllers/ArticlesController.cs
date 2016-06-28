@@ -22,6 +22,10 @@ namespace WebShop.Web.Controllers
         {
             return View(new ArticlePagingViewModel(repository.GetArticles(page, Pagesize), Pagesize));
         }
+        public ActionResult Details(string id)
+        {
+            return View(new ArticleViewModel(repository.GetArticle(id)));
+        }
         public ActionResult Articles(int page = 1)
         {
             return PartialView(repository.GetArticles(page, Pagesize).Values.Select(a => new ArticleViewModel(a)));

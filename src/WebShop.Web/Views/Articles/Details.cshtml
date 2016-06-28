@@ -1,0 +1,32 @@
+﻿@model WebShop.Web.Models.ArticleViewModel
+
+@{
+    ViewBag.Title = "title";
+}
+
+<h2>Article Details</h2>
+<link href="@Url.Content("~/Content/Articles/Index.css")" rel="stylesheet" type="text/css" />
+<div class="thumbnail">
+    <img class="group list-group-image" style="width: 200px; height: 240px" src="@Model.Image" alt="@Model.Name" />
+    <div class="caption">
+        <h4 class="group inner list-group-item-heading">
+            @Model.Name
+        </h4>
+        <p>
+            @Model.Description
+        </p>
+        <div class="row">
+            <div class="col-xs-12 col-md-12 centering text-center">
+                <p class="lead">
+                    @Model.Price
+                </p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-md-12 centering text-center">
+                <a class="btn btn-success">Add to cart</a>
+                <a class="btn btn-info" href="@Url.Action("Index")">back</a>
+            </div>
+        </div>
+    </div>
+</div>

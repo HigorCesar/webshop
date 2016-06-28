@@ -5,6 +5,7 @@ namespace WebShop.Domain
 {
     public class Article
     {
+        public string Id { get; set; }
         public string Name { get; set; }
         public string Description { get; set; }
         public decimal Price { get; set; }
@@ -15,8 +16,9 @@ namespace WebShop.Domain
         {
 
         }
-        public Article(string name, string description, decimal price, decimal vat, string image)
+        public Article(string id, string name, string description, decimal price, decimal vat, string image)
         {
+            Id = id;
             Name = name;
             Description = description;
             Price = price;

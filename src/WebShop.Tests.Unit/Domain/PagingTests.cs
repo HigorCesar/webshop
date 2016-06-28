@@ -19,7 +19,8 @@ namespace WebShop.Tests.Unit.Domain
         [Test]
         public void Constructor_mapping()
         {
-            var articles = new List<Article> { new Article("name", "description", 10, 1, "image") };
+
+            var articles = new List<Article> { new Article(DateTime.UtcNow.ToString("hhmmssfff"), "name", "description", 10, 1, "image") };
             var target = new Paging<Article>(articles, 100, 1);
 
             Assert.AreEqual(100, target.Quantity);

@@ -33,5 +33,10 @@ namespace WebShop.Infrastructure.Repository
         {
             return new Paging<Article>(articles.Skip((page - 1) * pageSize).Take(pageSize), articles.Count(), page);
         }
+
+        public Article GetArticle(string id)
+        {
+            return articles.FirstOrDefault(a => a.Id == id);
+        }
     }
 }

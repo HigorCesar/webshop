@@ -1,0 +1,94 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<articles>
+  <article>
+    <Id>1</Id>
+    <Name>Domain-Driven Design: Tackling Complexity in the Heart of Software</Name>
+    <Description>If you have even been involved in a software project (a) as a developer and did not know what the end product is going to be used for or how it will be used or (b) as an architect who spent countless hours with your stakeholders and domain experts trying to figure out how to go about architecting your application, then you should read this book. Read it again after you have read it for the first time. This book is packed with pointers, information, tips, how-tos, "down to earth" practical samples, and even conversational examples that one could have while gathering requirements. Evans in his book fills a wide gap that we all tend to come across while designing software applications...</Description>
+    <Price>30.00</Price>
+    <Vat>2.00</Vat>
+    <Image>https://images-na.ssl-images-amazon.com/images/I/515FeOFonQL._SX378_BO1,204,203,200_.jpg</Image>
+  </article>
+  <article>
+    <Id>2</Id>
+    <Name>Design Patterns: Elements of Reusable Object-Oriented Software</Name>
+    <Description>These texts cover the design of object-oriented software and examine how to investigate requirements, create solutions and then translate designs into code, showing developers how to make practical use of the most significant recent developments. A summary of UML notation is included...</Description>
+    <Price>10.40</Price>
+    <Vat>1.40</Vat>
+    <Image>https://images-na.ssl-images-amazon.com/images/I/51szD9HC9pL._SX395_BO1,204,203,200_.jpg</Image>
+  </article>
+  <article>
+    <Id>3</Id>
+    <Name>Clean Code: A Handbook of Agile Software Craftsmanship</Name>
+    <Description>Even bad code can function. But if code isn’t clean, it can bring a development organization to its knees. Every year, countless hours and significant resources are lost because of poorly written code. But it doesn’t have to be that way....</Description>
+    <Price>17.03</Price>
+    <Vat>1.03</Vat>
+    <Image>https://images-na.ssl-images-amazon.com/images/I/51oXyW8WQwL._SX387_BO1,204,203,200_.jpg</Image>
+  </article>
+  <article>
+    <Id>4</Id>
+    <Name>C# in Depth, 3rd Edition </Name>
+    <Description>C# in Depth, Third Edition updates the best-selling second edition to cover the new features of C# 5, including the challenges of writing maintainable asynchronous code. It preserves the uniquely insightful look into the tricky areas and dusty corners of C# that only expert Jon Skeet can provide...</Description>
+    <Price>13.60</Price>
+    <Vat>1.60</Vat>
+    <Image>https://images-na.ssl-images-amazon.com/images/I/41prHleW6NL._SX397_BO1,204,203,200_.jpg</Image>
+  </article>
+  <article>
+    <Id>5</Id>
+    <Name>Framework Design Guidelines: Conventions, Idioms, and Patterns for Reusable .NET Libraries</Name>
+    <Description>Framework Design Guidelines, Second Edition, teaches developers the best practices for designing reusable libraries for the Microsoft .NET Framework. Expanded and updated for .NET 3.5, this new edition focuses on the design issues that directly affect the programmability of a class library, specifically its publicly accessible APIs...</Description>
+    <Price>34.75</Price>
+    <Vat>3.50</Vat>
+    <Image>https://images-na.ssl-images-amazon.com/images/I/51cRrFPQyBL._SX366_BO1,204,203,200_.jpg</Image>
+  </article>
+  <article>
+    <Id>6</Id>
+    <Name>The Pragmatic Programmer: From Journeyman to Master</Name>
+    <Description>Ward Cunningham Straight from the programming trenches, The Pragmatic Programmer cuts through the increasing specialization and technicalities of modern software development to examine the core process--taking a requirement and producing working, maintainable code that delights its users. It covers topics ranging from personal responsibility and career development to architectural techniques for keeping your code flexible and easy to adapt and reuse. Read this book, and youll learn how to *Fight software rot; *Avoid the trap of duplicating...</Description>
+    <Price>27.40</Price>
+    <Vat>3.00</Vat>
+    <Image>https://images-na.ssl-images-amazon.com/images/I/41BKx1AxQWL._SX396_BO1,204,203,200_.jpg</Image>
+  </article>
+  <article>
+    <Id>7</Id>
+    <Name>Refactoring: Improving the Design of Existing Code</Name>
+    <Description>As the application of object technology--particularly the Java programming language--has become commonplace, a new problem has emerged to confront the software development community. Significant numbers of poorly designed programs have been created by less-experienced developers, resulting in applications that are inefficient and hard to maintain and extend. Increasingly, software system professionals are discovering just how difficult it is to work with these inherited, non-optimal applications. For several years, expert-level object programmers have...</Description>
+    <Price>34.97</Price>
+    <Vat>3.50</Vat>
+    <Image>https://images-na.ssl-images-amazon.com/images/I/51K-M5hR8qL._SX392_BO1,204,203,200_.jpg</Image>
+  </article>
+  <article>
+    <Id>8</Id>
+    <Name>Patterns of Enterprise Application Architecture</Name>
+    <Description>The practice of enterprise application development has benefited from the emergence of many new enabling technologies. Multi-tiered object-oriented platforms, such as Java and .NET, have become commonplace. These new tools and technologies are capable of building powerful applications, but they are not easily implemented. Common failures in enterprise applications often occur because their developers do not understand the architectural lessons that experienced object developers have learned...</Description>
+    <Price>20.87</Price>
+    <Vat>2.10</Vat>
+    <Image>https://images-na.ssl-images-amazon.com/images/I/51IuDvAU1CL._SX387_BO1,204,203,200_.jpg</Image>
+  </article>
+  <article>
+    <Id>9</Id>
+    <Name>Rework</Name>
+    <Description>
+      Most business books give you the same old advice: Write a business plan, study the competition, seek investors, yadda yadda. If you're looking for a book like that, put this one back on the shelf.
+      Rework shows you a better, faster, easier way to succeed in business. Read it and you'll know why plans are actually harmful, why you don't need outside investors, and why you're better off ignoring the competition. The truth is, you need less than you think. You don't need to be a workaholic. You don't need to staff up. You don't need to waste time on paperwork or meetings. You don't even need an office. Those are all just excuses...
+    </Description>
+    <Price>14.90</Price>
+    <Vat>1.90</Vat>
+    <Image>https://images-na.ssl-images-amazon.com/images/I/419F9j3GqxL._SX339_BO1,204,203,200_.jpg</Image>
+  </article>
+  <article>
+    <Id>10</Id>
+    <Name>Code Complete: A Practical Handbook of Software Construction</Name>
+    <Description>Widely considered one of the best practical guides to programming, Steve McConnell’s original CODE COMPLETE has been helping developers write better software for more than a decade. Now this classic book has been fully updated and revised with leading-edge practices—and hundreds of new code samples—illustrating the art and science of software construction. Capturing the body of knowledge available from research, academia, and everyday commercial practice, McConnell synthesizes the most effective techniques and must-know principles into...</Description>
+    <Price>15.20</Price>
+    <Vat>1.70</Vat>
+    <Image>https://images-na.ssl-images-amazon.com/images/I/51IuDvAU1CL._SX387_BO1,204,203,200_.jpg</Image>
+  </article>
+  <article>
+    <Id>11</Id>
+    <Name>Foundation </Name>
+    <Description>For twelve thousand years the Galactic Empire has ruled supreme. Now it is dying. But only Hari Sheldon, creator of the revolutionary science of psychohistory, can see into the future--to a dark age of ignorance, barbarism, and warfare that will last thirty thousand years. To preserve knowledge and save mankind, Seldon gathers the best minds in the Empire--both scientists and scholars--and brings them to a bleak planet at the edge of the Galaxy to serve as a beacon of hope for a fututre generations. He calls his sanctuary the Foundation...</Description>
+    <Price>11.47</Price>
+    <Vat>1.47</Vat>
+    <Image>https://images-na.ssl-images-amazon.com/images/I/51aKk%2BWF2XL._SX298_BO1,204,203,200_.jpg</Image>
+  </article>
+</articles>

@@ -1,0 +1,27 @@
+@model IEnumerable<WebShop.Web.Models.ArticleViewModel>
+@foreach (var article in this.Model)
+{
+    <div class="item list-group-item  col-xs-4 col-lg-4">
+        <div class="thumbnail">
+            <img class="group list-group-image" style="width: 100px; height: 120px" src="@article.Image" alt="@article.Name" />
+            <div class="caption">
+                <h4 class="group inner list-group-item-heading">
+                    @article.Name
+                </h4>
+                <p>
+                    @article.ShortDescription
+                </p>
+                <div class="row">
+                    <div class="col-xs-12 col-md-6">
+                        <p class="lead">
+                            $@article.Price
+                        </p>
+                    </div>
+                    <div class="col-xs-12 col-md-6">
+                        <a class="btn btn-success">Add to cart</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+}

@@ -1,0 +1,1 @@
+"../src/packages/NUnit.Console.3.0.1/tools/nunit3-console.exe" "../src/WebShop.Tests.Unit/bin/Debug/WebShop.Tests.Unit.dll"

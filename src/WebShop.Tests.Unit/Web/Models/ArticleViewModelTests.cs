@@ -26,7 +26,7 @@ namespace WebShop.Tests.Unit.Web.Models
             var target = new ArticleViewModel(article);
 
             Assert.AreEqual(article.Name, target.Name);
-            Assert.AreEqual($"{article.Price:C}", target.Price);
+            Assert.AreEqual($"{article.Price:C}", target.FormattedPrice);
             Assert.AreEqual($"{article.Description.Substring(0, 100)}...", target.ShortDescription);
             Assert.AreEqual(article.Description, target.Description);
             Assert.AreEqual(article.Image, target.Image);

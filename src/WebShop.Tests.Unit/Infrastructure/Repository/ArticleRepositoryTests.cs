@@ -3,7 +3,7 @@ using System.IO;
 using System.Linq;
 using System.Reflection;
 using NUnit.Framework;
-using WebShop.Infrastructure.Repository;
+using WebShop.Infrastructure;
 
 namespace WebShop.Tests.Unit.Infrastructure.Repository
 {

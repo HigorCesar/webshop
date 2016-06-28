@@ -1,0 +1,15 @@
+﻿@model WebShop.Web.Models.ShoppingCart
+
+@{
+    ViewBag.Title = "Shopping Cart";
+    Layout = "";
+}
+<table>
+    @foreach (var article in Model.Articles)
+    {
+        <tr>
+            <td>@article.Name</td>
+            <td>@article.FormattedPrice</td>
+        </tr>
+    }
+</table>

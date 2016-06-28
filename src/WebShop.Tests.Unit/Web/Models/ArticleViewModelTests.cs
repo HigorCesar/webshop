@@ -21,7 +21,7 @@ namespace WebShop.Tests.Unit.Web.Models
         {
             var description =
                 "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam et augue semper, mattis velit in, convallis ligula. Curabitur enim ante, iaculis nec purus a, vulputate cursus libero. Mauris ut dapibus enim. Donec ut viverra tortor, at commodo libero. Suspendisse potenti. Sed pretium nibh ac justo molestie pellentesque. Nullam et dignissim nulla, et laoreet nisl. Sed placerat, odio a venenatis consectetur, lacus velit vestibulum tortor, in tristique libero diam non quam. Phasellus molestie dui eu auctor finibus.";
-            var article = new Article("Lorem ipsum", description, 20.00m, 2.00m, "image");
+            var article = new Article(DateTime.UtcNow.ToString("hhmmssfff"), "Lorem ipsum", description, 20.00m, 2.00m, "image");
 
             var target = new ArticleViewModel(article);
 

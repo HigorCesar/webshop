@@ -13,7 +13,7 @@ namespace WebShop.Tests.Unit.Web.Models
     {
         private Article BuildFakeArticle()
         {
-            return new Article("name", "description", 0, 0, "image");
+            return new Article(DateTime.UtcNow.ToString("hhmmssfff"), "name", "description", 0, 0, "image");
         }
         [Test]
         public void Constructor_thows_exception_when_articles_is_null()

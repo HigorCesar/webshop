@@ -45,14 +45,28 @@ namespace WebShop.Tests.Unit.Infrastructure.Repository
             Assert.AreEqual(2, result.Values.Count());
             Assert.AreEqual(3, result.Page);
         }
+
         [Test]
         public void GetArticles_non_valid_page_returns_empty()
         {
             var target = new ArticleRepository("./resources/articles_22.xml");
-            var result = target.GetArticles(21,10);
+            var result = target.GetArticles(21, 10);
             Assert.AreEqual(22, result.Quantity);
             Assert.AreEqual(0, result.Values.Count());
             Assert.AreEqual(21, result.Page);
+        }
+        [Test]
+        public void GetArticle_null_when_do_not_find()
+        {
+            var target = new ArticleRepository("./resources/articles_2.xml");
+            Assert.IsNull(target.GetArticle("99"));
+        }
+        [Test]
+        public void GetArticle()
+        {
+            var target = new ArticleRepository("./resources/articles_2.xml");
+            var article = target.GetArticle("1");
+            Assert.AreEqual("1", article.Id);
         }
     }
 }

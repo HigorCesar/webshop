@@ -10,6 +10,7 @@ using Microsoft.Practices.Unity;
 using Unity.Mvc4;
 using WebShop.Domain;
 using WebShop.Infrastructure.Repository;
+using WebShop.Web.Models;
 
 namespace WebShop.Web
 {
@@ -17,6 +18,7 @@ namespace WebShop.Web
     {
         protected void Application_Start()
         {
+            ModelBinders.Binders.Add(typeof(ShoppingCart), new ShoppingCartModelBinder());
             AreaRegistration.RegisterAllAreas();
             GlobalConfiguration.Configure(WebApiConfig.Register);
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);

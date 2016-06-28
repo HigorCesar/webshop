@@ -11,7 +11,8 @@ namespace WebShop.Web.Models
         public string Image { get; set; }
         public string Description { get; set; }
         public string ShortDescription { get; set; }
-        public string Price { get; set; }
+        public string FormattedPrice { get; set; }
+        public decimal Price { get; set; }
         public ArticleViewModel(Article article)
         {
             if (article == null)
@@ -24,7 +25,8 @@ namespace WebShop.Web.Models
                 ShortDescription = $"{article.Description.Substring(0, 100)}...";
             else
                 ShortDescription = article.Description;
-            Price = $"{article.Price:C}";
+            FormattedPrice = $"{article.Price:C}";
+            Price = article.Price;
             Image = article.Image;
         }
     }

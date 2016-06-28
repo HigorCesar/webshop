@@ -4,11 +4,24 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.Title</title>
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
     @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/jquery-ui")
     @Scripts.Render("~/bundles/bootstrap")
+    <style>
+        .box {
+            display: none;
+            width: 100%;
+        }
 
+            a:hover + .box, .box:hover {
+                display: block;
+                position: relative;
+                z-index: 100;
+            }
+    </style>
 </head>
 <body>
     <div class="navbar navbar-inverse navbar-fixed-top">
@@ -25,7 +38,14 @@
                 <ul class="nav navbar-nav">
                     <li>@Html.ActionLink("Overview", "Index", "Articles")</li>
                 </ul>
-                @Html.Partial("_LoginPartial")
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <img id="shopping-cart" src="http://www.freeiconspng.com/uploads/grocery-cart-icon-6.png" width="40px" height="40px" />
+                        <span id="shopping-cart-count">0</span>
+                        <div id="shopping-cart-dialog" style="background-color: #eeeeee">
+                        </div>
+                    </li>
+                </ul>
             </div>
         </div>
     </div>
@@ -36,8 +56,6 @@
             <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
         </footer>
     </div>
-
-
     @RenderSection("scripts", required: false)
 </body>
 </html>

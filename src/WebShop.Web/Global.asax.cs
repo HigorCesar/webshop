@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using System.Web.Hosting;
 using System.Web.Http;
 using System.Web.Mvc;
 using System.Web.Optimization;
@@ -26,8 +27,8 @@ namespace WebShop.Web
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
-
-            var connectionFactory = new OrmLiteConnectionFactory("E:\\projetos\\webshop\\database\\localdb", SqliteDialect.Provider);
+            var localDbPath = HostingEnvironment.MapPath("/App_Data/database/localdb");
+            var connectionFactory = new OrmLiteConnectionFactory(localDbPath, SqliteDialect.Provider);
             using (var db = connectionFactory.Open())
             {
                 db.CreateTableIfNotExists<Customer>();
@@ -35,9 +36,9 @@ namespace WebShop.Web
             }
 
             var container = new UnityContainer();
-            container.RegisterType<IDbConnectionFactory, OrmLiteConnectionFactory>(new InjectionConstructor("E:\\projetos\\webshop\\database\\localdb", SqliteDialect.Provider));
+            container.RegisterType<IDbConnectionFactory, OrmLiteConnectionFactory>(new InjectionConstructor(localDbPath, SqliteDialect.Provider));
             container.RegisterType<ICheckoutRepository, CheckoutRepository>();
-            container.RegisterType<IArticleRepository, ArticleRepository>(new InjectionConstructor(@"E:\projetos\webshop\src\WebShop.Web\App_Data\articles.xml"));
+            container.RegisterType<IArticleRepository, ArticleRepository>(new InjectionConstructor(HostingEnvironment.MapPath("/App_Data/Articles.xml")));
             DependencyResolver.SetResolver(new UnityDependencyResolver(container));
         }
     }

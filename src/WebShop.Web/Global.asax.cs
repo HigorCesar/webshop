@@ -38,7 +38,7 @@ namespace WebShop.Web
             var container = new UnityContainer();
             container.RegisterType<IDbConnectionFactory, OrmLiteConnectionFactory>(new InjectionConstructor(localDbPath, SqliteDialect.Provider));
             container.RegisterType<ICheckoutRepository, CheckoutRepository>();
-            container.RegisterType<IArticleRepository, ArticleRepository>(new InjectionConstructor(HostingEnvironment.MapPath("/App_Data/Articles.xml")));
+            container.RegisterType<IArticleRepository, ArticleRepository>(new InjectionConstructor(HostingEnvironment.MapPath("/App_Data/articles.xml")));
             DependencyResolver.SetResolver(new UnityDependencyResolver(container));
         }
     }

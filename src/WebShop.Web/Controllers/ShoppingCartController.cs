@@ -23,12 +23,12 @@ namespace WebShop.Web.Controllers
         public int AddItem(string id, ShoppingCart cart)
         {
             cart.AddItem(new ArticleViewModel(articleRepository.GetArticle(id)));
-            return cart.Articles.Count;
+            return cart.Count();
 
         }
         public int Count(ShoppingCart cart)
         {
-            return cart.Articles.Count;
+            return cart.Count();
         }
 
         public ActionResult Index(string id, ShoppingCart cart)
@@ -47,8 +47,8 @@ namespace WebShop.Web.Controllers
         {
             var domainCustomer = new Customer(customer.Title, customer.FirstName, customer.LastName, customer.Email,
                 customer.Address, customer.HouseNumber, customer.ZipCode, customer.City);
-
-            var order = new Order(domainCustomer, cart.Articles.Select(a => articleRepository.GetArticle(a.Id)));
+            var articlesWithQuantity = cart.Items.Select(a => new Tuple<Article, int>(articleRepository.GetArticle(a.Value.Article.Id), a.Value.Quantity));
+            var order = new Order(domainCustomer, articlesWithQuantity);
             using (var cts = new CancellationTokenSource(TimeSpan.FromSeconds(1)))
             {
                 await checkoutRepository.Checkout(domainCustomer, order, cts.Token);

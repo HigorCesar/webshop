@@ -21,5 +21,18 @@ namespace WebShop.Web.Models
         {
             get { return Articles.Sum(a => a.Price); }
         }
+        public Decimal Vat
+        {
+            get { return Articles.Sum(a => a.Vat); }
+        }
+        public Decimal Total
+        {
+            get { return Articles.Sum(a => a.Vat + a.Price); }
+        }
+
+        public void Clear()
+        {
+            Articles = new List<ArticleViewModel>();
+        }
     }
 }

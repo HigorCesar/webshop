@@ -271,6 +271,7 @@
     <Compile Include="Models\ShoppingCart.cs" />
     <Compile Include="Models\ShoppingCartModelBinder.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Content Include="Scripts\Articles\Index.js" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -32,7 +32,7 @@ namespace WebShop.Web.Models
             Image = article.Image;
 
             FormattedPrice = $"{article.Price:C}";
-            FormattedTotal = $"{article.TotalPrice():C}";
+            FormattedTotal = $"{article.TotalPrice:C}";
             FormattedVat = $"{article.Vat:C}";
         }
     }

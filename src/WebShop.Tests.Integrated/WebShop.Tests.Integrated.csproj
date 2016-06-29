@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{ABD737D2-F593-43D1-B3F9-4000CE4CB3BE}</ProjectGuid>
+    <ProjectGuid>{AE625557-7A68-48CA-9EA8-A66F4688A032}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>WebShop.Domain</RootNamespace>
-    <AssemblyName>WebShop.Domain</AssemblyName>
+    <RootNamespace>WebShop.Tests.Integrated</RootNamespace>
+    <AssemblyName>WebShop.Tests.Integrated</AssemblyName>
     <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <NuGetPackageImportStamp>
@@ -32,6 +32,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="nunit.framework, Version=3.2.1.0, Culture=neutral, PublicKeyToken=2638cd05610744eb, processorArchitecture=MSIL">
+      <HintPath>..\packages\NUnit.3.2.1\lib\net45\nunit.framework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="ServiceStack.Common, Version=4.0.60.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\ServiceStack.Common.4.0.60\lib\net40\ServiceStack.Common.dll</HintPath>
       <Private>True</Private>
@@ -66,17 +70,25 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Article.cs" />
-    <Compile Include="Paging.cs" />
-    <Compile Include="Customer.cs" />
-    <Compile Include="IArticleRepository.cs" />
-    <Compile Include="ICheckoutRepository.cs" />
-    <Compile Include="Order.cs" />
+    <Compile Include="CheckoutRepositoryTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\WebShop.Domain\WebShop.Domain.csproj">
+      <Project>{abd737d2-f593-43d1-b3f9-4000ce4cb3be}</Project>
+      <Name>WebShop.Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\WebShop.Infrastructure\WebShop.Infrastructure.csproj">
+      <Project>{D44F8443-E956-4BB4-AB37-AB49E9DF214E}</Project>
+      <Name>WebShop.Infrastructure</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{82A7F48D-3B50-4B1E-B82E-3ADA8210C358}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\System.Data.SQLite.Core.1.0.102.0\build\net46\System.Data.SQLite.Core.targets" Condition="Exists('..\packages\System.Data.SQLite.Core.1.0.102.0\build\net46\System.Data.SQLite.Core.targets')" />

@@ -32,12 +32,6 @@ namespace WebShop.Infrastructure
 
         }
 
-        public async Task<IEnumerable<Order>> GetOrders(CancellationToken cancellationToken)
-        {
-            using (var db = connectionFactory.Open())
-            {
-                return await db.SelectAsync<Order>(cancellationToken);
-            }
-        }
+       
     }
 }

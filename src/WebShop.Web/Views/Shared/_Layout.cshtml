@@ -33,16 +33,16 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                @Html.ActionLink("WebShop", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                @Html.ActionLink("WebShop", "Index", "Articles", new { area = "" }, new { @class = "navbar-brand" })
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Overview", "Index", "Articles")</li>
+                    <li>@Html.ActionLink("Overview(rest)", "AllArticles", "Articles")</li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
                     <li>
-                        <img id="shopping-cart" src="http://www.freeiconspng.com/uploads/grocery-cart-icon-6.png" width="40px" height="40px" />
-                        <span id="shopping-cart-count">0</span>
+                        <img id="shopping-cart" src="http://www.freeiconspng.com/uploads/grocery-cart-icon-6.png" width="40" height="40" style="cursor: pointer;" />
+                        <span id="shopping-cart-count" style="color: #FFFFFF; cursor: pointer;">0</span>
                         <div id="shopping-cart-dialog" style="background-color: #eeeeee">
                         </div>
                     </li>

@@ -8,14 +8,18 @@ namespace WebShop.Domain
     public class Order
     {
         [PrimaryKey]
-        public string Id { get; set; }
-        public DateTime PlaceDate { get; set; }
-        public string CustomerId { get; set; }
-        public decimal SubTotal { get; set; }
-        public decimal Vat { get; set; }
-        public decimal Total { get; set; }
-        public List<string> Articles { get; set; }
+        public string Id { get; private set; }
+        public DateTime PlaceDate { get; private set; }
+        public string CustomerId { get; private set; }
+        public decimal SubTotal { get; private set; }
+        public decimal Vat { get; private set; }
+        public decimal Total { get; private set; }
+        public List<string> Articles { get; private set; }
 
+        public Order()
+        {
+
+        }
         public Order(Customer customer, IEnumerable<Tuple<Article, int>> articles)
         {
             Id = DateTime.UtcNow.ToString("hhmmssfff");
@@ -25,7 +29,7 @@ namespace WebShop.Domain
             Articles = enumerable.Select(a => a.Item1.Name).ToList();
             SubTotal = enumerable.Sum(x => x.Item2 * x.Item1.Price);
             Vat = enumerable.Sum(x => x.Item2 * x.Item1.Vat);
-            Total = enumerable.Sum(x => x.Item2 * x.Item1.TotalPrice());
+            Total = enumerable.Sum(x => x.Item2 * x.Item1.TotalPrice);
 
         }
     }

@@ -61,12 +61,19 @@ namespace WebShop.Tests.Unit.Infrastructure.Repository
             var target = new ArticleRepository("./resources/articles_2.xml");
             Assert.IsNull(target.GetArticle("99"));
         }
+
         [Test]
         public void GetArticle()
         {
             var target = new ArticleRepository("./resources/articles_2.xml");
             var article = target.GetArticle("1");
             Assert.AreEqual("1", article.Id);
+        }
+        [Test]
+        public void GetArticles()
+        {
+            var target = new ArticleRepository("./resources/articles_2.xml");
+            Assert.AreEqual(2, target.GetArticles().Count());
         }
     }
 }

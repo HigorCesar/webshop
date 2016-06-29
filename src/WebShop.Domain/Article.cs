@@ -1,7 +1,4 @@
-﻿using System;
-using System.Xml.Serialization;
-
-namespace WebShop.Domain
+﻿namespace WebShop.Domain
 {
     public class Article
     {
@@ -11,7 +8,7 @@ namespace WebShop.Domain
         public decimal Price { get; set; }
         public decimal Vat { get; set; }
         public string Image { get; set; }
-
+        public decimal TotalPrice => Vat + Price;
         public Article()
         {
 
@@ -24,11 +21,6 @@ namespace WebShop.Domain
             Price = price;
             Vat = vat;
             Image = image;
-        }
-
-        public decimal TotalPrice()
-        {
-            return Vat + Price;
         }
     }
 }

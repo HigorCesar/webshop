@@ -12,6 +12,8 @@ namespace WebShop.Web.Models
         public string Description { get; set; }
         public string ShortDescription { get; set; }
         public string FormattedPrice { get; set; }
+        public string FormattedVat { get; set; }
+        public string FormattedTotal { get; set; }
         public decimal Price { get; set; }
         public decimal TotalPrice { get; set; }
         public decimal Vat { get; set; }
@@ -23,15 +25,15 @@ namespace WebShop.Web.Models
             Id = article.Id;
             Name = article.Name;
             Description = article.Description;
-            if (article.Description.Length > 100)
-                ShortDescription = $"{article.Description.Substring(0, 100)}...";
-            else
-                ShortDescription = article.Description;
-            FormattedPrice = $"{article.Price:C}";
+            ShortDescription = article.Description.Length > 100 ? $"{article.Description.Substring(0, 100)}..." : article.Description;
             Price = article.Price;
-            Image = article.Image;
             Vat = article.Vat;
             TotalPrice = Price + Vat;
+            Image = article.Image;
+
+            FormattedPrice = $"{article.Price:C}";
+            FormattedTotal = $"{article.TotalPrice():C}";
+            FormattedVat = $"{article.Vat:C}";
         }
     }
 }

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Xml.Serialization;
@@ -30,6 +31,11 @@ namespace WebShop.Infrastructure
         public Paging<Article> GetArticles(int page, int pageSize)
         {
             return new Paging<Article>(articles.Skip((page - 1) * pageSize).Take(pageSize), articles.Count(), page);
+        }
+
+        public IEnumerable<Article> GetArticles()
+        {
+            return articles;
         }
 
         public Article GetArticle(string id)

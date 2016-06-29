@@ -7,49 +7,6 @@
 <link href="@Url.Content("~/Content/Articles/Index.css")" rel="stylesheet" type="text/css" />
 <script type="text/javascript">
     $().ready(function () {
-
-        $.ajax({
-            url: '@Url.Action("Count", "ShoppingCart")',
-            success: function (data) {
-                $("#shopping-cart-count").html(data);
-            }
-        });
-        $("#shopping-cart-dialog").dialog({
-            autoOpen: false,
-            resizable: false,
-            title: 'Your Shopping cart',
-            modal: true,
-            buttons: [
-             {
-                 text: "Close",
-                 click: function() {
-                     $(this).dialog("close");
-                 }
-             },{
-                 text: "Checkout",
-                 click: function() {
-                     $(this).dialog("close");
-                     window.location = '@Url.Action("Checkout","ShoppingCart")';
-                 }
-             }],
-            open: function () {
-                $(this).load('@Url.Action("Index", "ShoppingCart")');
-            }
-        });
-        $( "#shopping-cart" ).click(function() {
-            $("#shopping-cart-dialog").dialog( "open" );
-        });
-        $(".add-to-cart").click(function () {
-            var articleId = $(this).attr('x-article-id');
-            $.ajax({
-                method : 'POST',
-                url: '@Url.Action("AddItem", "ShoppingCart")',
-                data: { "id": articleId },
-                success: function (data) {
-                    $("#shopping-cart-count").html(data);
-                }
-            });
-        });
         $("#next-page").click(function () {
             var page = parseInt($("#page-number").html());
             if (page < @Model.Pages) {
@@ -59,7 +16,7 @@
                 success: function (data) {
                     $("#product-list").html(data);
                     $("#page-number").html(page + 1);
-
+                    bindAddToCart();
             }
             });
         }
@@ -73,6 +30,7 @@
                 success: function (data) {
                     $("#product-list").html(data);
                     $("#page-number").html(page - 1);
+                    bindAddToCart();
                 }
             });
     });

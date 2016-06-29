@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
+    @Scripts.Render("~/bundles/Articles")
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/jquery-ui")
     @Scripts.Render("~/bundles/bootstrap")
@@ -57,5 +58,43 @@
         </footer>
     </div>
     @RenderSection("scripts", required: false)
+    <script type="text/javascript">
+        $().ready(function () {
+
+            $.ajax({
+                url: '@Url.Action("Count", "ShoppingCart")',
+                success: function (data) {
+                    $("#shopping-cart-count").html(data);
+                }
+            });
+            $("#shopping-cart").click(function () {
+                $("#shopping-cart-dialog").dialog("open");
+            });
+            bindAddToCart();
+
+            $("#shopping-cart-dialog").dialog({
+                autoOpen: false,
+                resizable: false,
+                title: 'Your Shopping cart',
+                modal: true,
+                buttons: [
+                 {
+                     text: "Close",
+                     click: function () {
+                         $(this).dialog("close");
+                     }
+                 }, {
+                     text: "Checkout",
+                     click: function () {
+                         $(this).dialog("close");
+                         window.location = '@Url.Action("Checkout","ShoppingCart")';
+                     }
+                 }],
+                open: function () {
+                    $(this).load('@Url.Action("Index", "ShoppingCart")');
+                }
+            });
+        })
+    </script>
 </body>
 </html>

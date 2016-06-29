@@ -12,10 +12,8 @@ namespace WebShop.Web.Models
         public string Description { get; set; }
         public string ShortDescription { get; set; }
         public string FormattedPrice { get; set; }
-        public string FormattedVat { get; set; }
         public decimal Price { get; set; }
         public decimal TotalPrice { get; set; }
-        public decimal FormattedTotalPrice { get; set; }
         public decimal Vat { get; set; }
         public ArticleViewModel(Article article)
         {
@@ -33,9 +31,7 @@ namespace WebShop.Web.Models
             Price = article.Price;
             Image = article.Image;
             Vat = article.Vat;
-            FormattedVat = $"{article.Vat:C}";
             TotalPrice = Price + Vat;
-            FormattedPrice = $"{TotalPrice:C}";
         }
     }
 }

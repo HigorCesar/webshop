@@ -52,8 +52,6 @@ namespace WebShop.Web.Controllers
             using (var cts = new CancellationTokenSource(TimeSpan.FromSeconds(1)))
             {
                 await checkoutRepository.Checkout(domainCustomer, order, cts.Token);
-
-                var r1 = await checkoutRepository.GetOrders(cts.Token);
             }
 
             cart.Clear();

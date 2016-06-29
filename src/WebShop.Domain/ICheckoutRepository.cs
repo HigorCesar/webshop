@@ -10,6 +10,5 @@ namespace WebShop.Domain
     public interface ICheckoutRepository
     {
         Task Checkout(Customer customer, Order order, CancellationToken cancellationToken);
-        Task<IEnumerable<Order>> GetOrders(CancellationToken cancellationToken);
     }
 }

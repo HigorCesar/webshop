@@ -7,19 +7,19 @@ namespace WebShop.Domain
     public class Customer
     {
         [PrimaryKey]
-        public string Id { get; set; }
-        public string Title { get; set; }
-        public string FirstName { get; set; }
-        public string LastName { get; set; }
-        public string Address { get; set; }
-        public string HouseNumber { get; set; }
-        public string ZipCode { get; set; }
-        public string City { get; set; }
-        public string Email { get; set; }
+        public string Id { get; private set; }
+        public string Title { get; private  set; }
+        public string FirstName { get; private set; }
+        public string LastName { get; private set; }
+        public string Address { get; private set; }
+        public string HouseNumber { get; private set; }
+        public string ZipCode { get; private set; }
+        public string City { get; private set; }
+        public string Email { get; private set; }
 
         public Customer(string title, string firstName, string lastName, string email, string address, string houseNumber, string zipCode, string city)
         {
-            Id = DateTime.UtcNow.ToString("hhmmssfff");
+            Id = DateTime.UtcNow.ToString("yyyyMMddhhmmssfff");
             Title = title;
             FirstName = firstName;
             LastName = lastName;

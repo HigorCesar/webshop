@@ -15,6 +15,8 @@ namespace WebShop.Infrastructure
     }
     public class ArticleRepository : IArticleRepository
     {
+
+
         private readonly Article[] articles;
         public ArticleRepository(string articlesFile)
         {

@@ -44,6 +44,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Domain\ArticleTests.cs" />
+    <Compile Include="Domain\CustomerTests.cs" />
+    <Compile Include="Domain\OrderTests.cs" />
     <Compile Include="Domain\PagingTests.cs" />
     <Compile Include="Infrastructure\Repository\ArticleRepositoryTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

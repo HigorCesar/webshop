@@ -25,5 +25,10 @@ namespace WebShop.Domain
             Vat = vat;
             Image = image;
         }
+
+        public decimal TotalPrice()
+        {
+            return Vat + Price;
+        }
     }
 }

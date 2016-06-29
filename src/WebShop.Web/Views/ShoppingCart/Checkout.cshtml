@@ -12,19 +12,23 @@
                 <thead>
                     <tr>
                         <th>Name</th>
-                        <th>Price(ex vat)</th>
+                        <th>Price</th>
                         <th>Vat</th>
+                        <th>Total(per article)</th>
+                        <th>Quantity</th>
                         <th>Total</th>
                     </tr>
                 </thead>
                 <tbody>
-                    @foreach (var article in Model.Articles)
+                    @foreach (var shoppingCartItem in Model.Items.Select(a => a.Value))
                     {
                         <tr>
-                            <td>@article.Name</td>
-                            <td>@article.Price</td>
-                            <td>@article.Vat</td>
-                            <td>@article.TotalPrice</td>
+                            <td>@shoppingCartItem.Article.Name</td>
+                            <td>@shoppingCartItem.Article.Price</td>
+                            <td>@shoppingCartItem.Article.Vat</td>
+                            <td>@shoppingCartItem.Article.TotalPrice</td>
+                            <td>@shoppingCartItem.Quantity</td>
+                            <td>@shoppingCartItem.Total()</td>
                         </tr>
                     }
                 </tbody>

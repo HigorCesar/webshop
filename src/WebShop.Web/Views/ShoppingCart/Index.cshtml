@@ -5,11 +5,19 @@
     Layout = "";
 }
 <table>
-    @foreach (var article in Model.Articles)
+    <thead>
+    <tr>
+        <td>Article</td>
+        <td>Quantity</td>
+        <td>Price</td>
+    </tr>
+    </thead>
+    @foreach (var article in Model.Items.Select(a => a.Value))
     {
         <tr>
-            <td>@article.Name</td>
-            <td>@article.FormattedPrice</td>
+            <td>@article.Article.Name</td>
+            <td>@article.Quantity</td>
+            <td>@article.Article.FormattedPrice</td>
         </tr>
     }
 </table>

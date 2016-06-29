@@ -31,5 +31,10 @@ namespace WebShop.Web.Controllers
             return PartialView(repository.GetArticles(page, Pagesize).Values.Select(a => new ArticleViewModel(a)));
         }
 
+        public ActionResult AllArticles()
+        {
+            return View();
+        }
+
     }
 }

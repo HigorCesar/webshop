@@ -1,0 +1,77 @@
+﻿@model dynamic
+
+@{
+    ViewBag.Title = "title";
+}
+
+<h2>All articles</h2>
+<script type="text/javascript">
+    var dialog;
+
+    function showDetails(id) {
+        $.get("/api/articles/" + id, function (data) {
+            $("#article-image").attr("src", data.Image);
+            $("#article-name").html(data.Name);
+            $("#article-description").html(data.Description);
+            $("#article-price").html(data.FormattedPrice);
+            $("#article-vat").html(data.FormattedVat);
+            $("#article-total").html(data.FormattedTotal);
+            dialog.dialog("open");
+        });
+    }
+    $(document).ready(function () {
+        dialog = $("#dialog-details").dialog({
+            autoOpen: false,
+            height: 400,
+            width: 450,
+            modal: true,
+            close: function () {
+            }
+        });
+
+        $.get("/api/articles", function (data) {
+            $('#all-articles-body').append(
+                $.map(data, function (article, index) {
+                    return "<tr onClick='showDetails(" + article.Id + ")'><td>" + article.Name + "</td><td>" + article.FormattedPrice + "</td></tr>";
+                }).join());
+        });
+    });
+</script>
+<table id="all-articles" class="table table-striped">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Price</th>
+        </tr>
+    </thead>
+    <tbody id="all-articles-body"></tbody>
+</table>
+<div id="dialog-details" title="Article details">
+    <div class="thumbnail">
+        <img class="group list-group-image" style="width: 200px; height: 240px" id="article-image" />
+        <div class="caption">
+            <h4 class="group inner list-group-item-heading" id="article-name"></h4>
+            <p id="article-description">
+
+            </p>
+            <div class="row">
+                <div class="col-xs-12 col-md-12 centering text-center">
+                    <table class="table">
+                        <tr>
+                            <td>Price</td>
+                            <td id="article-price"></td>
+                        </tr>
+                        <tr>
+                            <td>Vat</td>
+                            <td id="article-vat"></td>
+                        </tr>
+                        <tr>
+                            <td>Total</td>
+                            <td id="article-total"></td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

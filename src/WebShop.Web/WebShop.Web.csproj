@@ -255,6 +255,7 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Bootstrapper.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\ArticlesRestController.cs" />
     <Compile Include="Controllers\ShoppingCartController.cs" />
     <Compile Include="Models\ArticlePagingViewModel.cs" />
     <Compile Include="Controllers\ArticlesController.cs" />
@@ -343,6 +344,7 @@
     <Content Include="Views\ShoppingCart\Index.cshtml" />
     <Content Include="Views\ShoppingCart\Checkout.cshtml" />
     <Content Include="Views\ShoppingCart\ThankYou.cshtml" />
+    <Content Include="Views\Articles\AllArticles.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

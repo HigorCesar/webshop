@@ -25,10 +25,10 @@ namespace WebShop.Web.Models
             Id = article.Id;
             Name = article.Name;
             Description = article.Description;
-            ShortDescription = article.Description.Length > 100 ? $"{article.Description.Substring(0, 100)}..." : article.Description;
+            ShortDescription = article.Description?.Length > 100 ? $"{article.Description.Substring(0, 100)}..." : article.Description;
             Price = article.Price;
             Vat = article.Vat;
-            TotalPrice = Price + Vat;
+            TotalPrice = article.TotalPrice;
             Image = article.Image;
 
             FormattedPrice = $"{article.Price:C}";

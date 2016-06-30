@@ -7,8 +7,8 @@ namespace WebShop.Web.Models
 {
     public class ShoppingCartItem
     {
-        public ArticleViewModel Article { get; set; }
-        public int Quantity { get; set; }
+        public ArticleViewModel Article { get; private set; }
+        public int Quantity { get; private set; }
 
         public ShoppingCartItem(ArticleViewModel article)
         {
@@ -28,6 +28,11 @@ namespace WebShop.Web.Models
         {
             return Quantity * Article.TotalPrice;
         }
+
+        public void Add()
+        {
+            Quantity++;
+        }
     }
     public class ShoppingCart
     {
@@ -36,7 +41,7 @@ namespace WebShop.Web.Models
         public void AddItem(ArticleViewModel article)
         {
             if (Items.Any(x => x.Key == article.Id))
-                Items[article.Id].Quantity += 1;
+                Items[article.Id].Add();
             else
                 Items.Add(article.Id, new ShoppingCartItem(article));
         }

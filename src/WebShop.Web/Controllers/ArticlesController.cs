@@ -13,9 +13,9 @@ namespace WebShop.Web.Controllers
         private const int Pagesize = 10;
         private readonly IArticleRepository repository;
 
-        public ArticlesController()
+        public ArticlesController(IArticleRepository repository)
         {
-            this.repository = DependencyResolver.Current.GetService<IArticleRepository>();
+            this.repository = repository;
         }
 
         public ActionResult Index(int page = 1)

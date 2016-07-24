@@ -14,10 +14,6 @@ namespace WebShop.Web.Controllers
         {
             articleRepository = repository;
         }
-        public ArticlesRestController()
-        {
-            articleRepository = DependencyResolver.Current.GetService<IArticleRepository>();
-        }
         [System.Web.Http.Route("api/articles")]
         public IHttpActionResult Get()
         {

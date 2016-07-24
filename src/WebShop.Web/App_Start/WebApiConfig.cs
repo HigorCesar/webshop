@@ -1,7 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Configuration;
 using System.Linq;
+using System.Web.Hosting;
 using System.Web.Http;
+using Microsoft.Practices.Unity;
+using ServiceStack.Data;
+using ServiceStack.OrmLite;
+using Unity.Mvc4;
+using WebShop.Domain;
+using WebShop.Infrastructure;
 
 namespace WebShop.Web
 {
@@ -9,11 +15,8 @@ namespace WebShop.Web
     {
         public static void Register(HttpConfiguration config)
         {
-            // Web API configuration and services
-
             // Web API routes
             config.MapHttpAttributeRoutes();
-
             config.Routes.MapHttpRoute(
                 name: "DefaultApi",
                 routeTemplate: "api/{controller}/{id}",

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Linq;
 using System.Web;
 using System.Web.Hosting;
@@ -38,7 +39,7 @@ namespace WebShop.Web
             var container = new UnityContainer();
             container.RegisterType<IDbConnectionFactory, OrmLiteConnectionFactory>(new InjectionConstructor(localDbPath, SqliteDialect.Provider));
             container.RegisterType<ICheckoutRepository, CheckoutRepository>();
-            container.RegisterType<IArticleRepository, ArticleRepository>(new InjectionConstructor(HostingEnvironment.MapPath("/App_Data/articles.xml")));
+            container.RegisterType<IArticleRepository, ArticleRepository>(new InjectionConstructor(HostingEnvironment.MapPath(ConfigurationManager.AppSettings["articles-file"])));
             DependencyResolver.SetResolver(new UnityDependencyResolver(container));
         }
     }

@@ -26,12 +26,12 @@ namespace WebShop.Infrastructure
             using (var dbTrans = db.OpenTransaction())
             {
                 await db.SaveAsync(customer, false, cancellationToken);
-                await db.SaveAsync(order, false, cancellationToken);
+                await db.SaveAsync(order, true, cancellationToken);
                 dbTrans.Commit();
             }
 
         }
 
-       
+
     }
 }

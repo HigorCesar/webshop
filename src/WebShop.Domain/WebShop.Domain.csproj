@@ -67,6 +67,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Article.cs" />
+    <Compile Include="OrderItem.cs" />
     <Compile Include="Paging.cs" />
     <Compile Include="Customer.cs" />
     <Compile Include="IArticleRepository.cs" />

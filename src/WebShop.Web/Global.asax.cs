@@ -30,6 +30,7 @@ namespace WebShop.Web
             {
                 db.CreateTableIfNotExists<Customer>();
                 db.CreateTableIfNotExists<Order>();
+                db.CreateTableIfNotExists<OrderItem>();
             }
 
             var container = new UnityContainer();

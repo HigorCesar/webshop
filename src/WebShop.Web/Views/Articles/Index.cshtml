@@ -6,34 +6,34 @@
 <h2>Articles</h2>
 <link href="@Url.Content("~/Content/Articles/Index.css")" rel="stylesheet" type="text/css" />
 <script type="text/javascript">
-    $().ready(function () {
+    $().ready(function() {
         $("#next-page").click(function () {
             var page = parseInt($("#page-number").html());
-            if (page < @Model.Pages) {
+            if (page < (@Model.Pages)) {
                 $.ajax({
-                url: '@Url.Action("Articles")',
-                data: { "page": page + 1 },
-                success: function (data) {
-                    $("#product-list").html(data);
-                    $("#page-number").html(page + 1);
-                    bindAddToCart();
+                    url: '@Url.Action("Articles")',
+                    data: { "page": page + 1 },
+                    success: function(data) {
+                        $("#product-list").html(data);
+                        $("#page-number").html(page + 1);
+                        bindAddToCart();
+                    }
+                });
             }
-            });
-        }
         });
-    $("#previous-page").click(function () {
-        var page = parseInt($("#page-number").html());
-        if (page > 1)
-            $.ajax({
-                url: '@Url.Action("Articles")',
-                data: { "page": page -1},
-                success: function (data) {
-                    $("#product-list").html(data);
-                    $("#page-number").html(page - 1);
-                    bindAddToCart();
-                }
-            });
-    });
+        $("#previous-page").click(function () {
+            var page = parseInt($("#page-number").html());
+            if (page > 1)
+                $.ajax({
+                    url: '@Url.Action("Articles")',
+                    data: { "page": page -1},
+                    success: function (data) {
+                        $("#product-list").html(data);
+                        $("#page-number").html(page - 1);
+                        bindAddToCart();
+                    }
+                });
+        });
     });
 </script>
 <div class="container">
@@ -41,7 +41,7 @@
         <nav>
             <ul class="pager">
                 <li id="previous-page"><a href="#">Previous</a></li>
-                <li id="page-number">@this.Model.Page</li>
+                <li id="page-number">@Model.Page</li>
                 <li id="next-page"><a href="#">Next</a></li>
             </ul>
         </nav>

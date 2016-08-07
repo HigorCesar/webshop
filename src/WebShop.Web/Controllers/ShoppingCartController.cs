@@ -1,12 +1,10 @@
 ﻿using System;
 using System.Linq;
-using System.Text.RegularExpressions;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Web.Mvc;
 using WebShop.Domain;
 using WebShop.Web.Models;
-using WebShop.Web.Resources;
 
 namespace WebShop.Web.Controllers
 {

@@ -1,14 +1,4 @@
-﻿using System.Configuration;
-using System.Linq;
-using System.Web.Hosting;
-using System.Web.Http;
-using Microsoft.Practices.Unity;
-using ServiceStack.Data;
-using ServiceStack.OrmLite;
-using Unity.Mvc4;
-using WebShop.Domain;
-using WebShop.Infrastructure;
-
+﻿using System.Web.Http;
 namespace WebShop.Web
 {
     public static class WebApiConfig

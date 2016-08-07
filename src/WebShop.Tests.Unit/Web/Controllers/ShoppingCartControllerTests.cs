@@ -64,12 +64,12 @@ namespace WebShop.Tests.Unit.Web.Controllers
                 .Returns(Task.FromResult(0));
             var articleRepository = new Mock<IArticleRepository>();
             articleRepository.Setup(r => r.GetArticle(It.IsAny<string>()))
-                .Returns(new Article { Id = "1", Name = "Article B" });
+                .Returns(new Article("1", "article A", "description", 11, 1, "image1"));
 
             var target = new ShoppingCartController(checkoutRepository.Object, articleRepository.Object);
 
             var shoppingCart = new ShoppingCart();
-            shoppingCart.AddItem(new ArticleViewModel(new Article { Id = "1", Name = "Article B" }));
+            shoppingCart.AddItem(new ArticleViewModel(new Article("1", "article A", "description", 11, 1, "image1")));
 
             var result = (RedirectToRouteResult)(await target.Checkout(new CheckoutViewModel(), shoppingCart));
             Assert.IsNotNull(result);

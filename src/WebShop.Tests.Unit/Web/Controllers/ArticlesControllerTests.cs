@@ -39,12 +39,8 @@ namespace WebShop.Tests.Unit.Web.Controllers
 
             var articles = new List<Article>
             {
-                new Article{
-                Id = "1",
-                Name = "Article 1"},
-                new Article{
-                Id = "2",
-                Name = "Article 2"}
+               new Article("1", "article 1", "description", 11, 1, "image1") ,
+               new Article("2", "article 2", "description", 11, 1, "image1")
             };
             repository.Setup(r => r.GetArticles(It.IsAny<int>(), It.IsAny<int>()))
                 .Returns(new Paging<Article>(articles, 10, 1));
@@ -66,19 +62,15 @@ namespace WebShop.Tests.Unit.Web.Controllers
 
             var articles = new List<Article>
             {
-                new Article{
-                Id = "1",
-                Name = "Article 1"},
-                new Article{
-                Id = "2",
-                Name = "Article 2"}
+                new Article("1", "article 1", "description", 11, 1, "image1"),
+               new Article("2", "article 2", "description", 11, 1, "image1")
             };
             repository.Setup(r => r.GetArticles(It.IsAny<int>(), It.IsAny<int>()))
                 .Returns(new Paging<Article>(articles, 10, 1));
 
             var target = new ArticlesController(repository.Object);
 
-            var result = (PartialViewResult)target.Articles(1);
+            var result = (PartialViewResult)target.Articles();
             var model = (IEnumerable<ArticleViewModel>)result.Model;
 
             Assert.AreEqual(2, model.Count());
@@ -91,7 +83,7 @@ namespace WebShop.Tests.Unit.Web.Controllers
             var articleId = "1";
             repository
                 .Setup(r => r.GetArticle(articleId))
-                .Returns(new Article { Id = articleId, Name = "Article 1" });
+                .Returns(new Article(articleId, "article 2", "description", 11, 1, "image1"));
 
             var target = new ArticlesController(repository.Object);
 

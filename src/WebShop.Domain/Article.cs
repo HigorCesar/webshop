@@ -14,10 +14,12 @@ namespace WebShop.Domain
         [StringLength(200)]
         public string Image { get; set; }
         public decimal TotalPrice => Vat + Price;
+
         public Article()
         {
 
         }
+
         public Article(string id, string name, string description, decimal price, decimal vat, string image)
         {
             Id = id;

@@ -1,11 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using NUnit.Framework;
-using ServiceStack;
 using ServiceStack.OrmLite;
 using WebShop.Domain;
 using WebShop.Infrastructure;
@@ -41,8 +38,8 @@ namespace WebShop.Tests.Integrated
                 "Rio de janeiro");
             var articles = new List<Tuple<Article, int>>
             {
-                new Tuple<Article, int>(new Article {Name = "a1", Price = 10, Vat = 1}, 1),
-                new Tuple<Article, int>(new Article {Name = "a2", Price = 12, Vat = 2}, 2)
+                new Tuple<Article, int>(new Article("1","a1","description",10,1,"image1"), 1),
+                new Tuple<Article, int>(new Article("2","a2","description",12,2,"image2"), 2)
             };
             var order = new Order(customer, articles);
             try
@@ -70,8 +67,8 @@ namespace WebShop.Tests.Integrated
                 "Rio de janeiro");
             var articles = new List<Tuple<Article, int>>
             {
-                new Tuple<Article, int>(new Article {Name = "a1", Price = 10, Vat = 1}, 1),
-                new Tuple<Article, int>(new Article {Name = "a2", Price = 12, Vat = 2}, 2)
+                new Tuple<Article, int>(new Article("1","a1","description",10,1,"image1"), 1),
+                new Tuple<Article, int>(new Article("2","a2","description",12,2,"image2"), 2)
             };
             var order = new Order(customer, articles);
             try
@@ -98,8 +95,8 @@ namespace WebShop.Tests.Integrated
                 "Rio de janeiro");
             var articles = new List<Tuple<Article, int>>
             {
-                new Tuple<Article, int>(new Article {Name = "a1", Price = 10, Vat = 1}, 1),
-                new Tuple<Article, int>(new Article {Name = "a2", Price = 12, Vat = 2}, 2)
+                new Tuple<Article, int>(new Article("1","a1","description",10,1,"image1"), 1),
+                new Tuple<Article, int>(new Article("2","a2","description",12,2,"image2"), 2)
             };
             var order = new Order(customer, articles);
             try
@@ -122,8 +119,8 @@ namespace WebShop.Tests.Integrated
                 "Rio de janeiro");
             var articles = new List<Tuple<Article, int>>
             {
-                new Tuple<Article, int>(new Article {Name = "a1", Price = 10, Vat = 1}, 1),
-                new Tuple<Article, int>(new Article {Name = "a2", Price = 12, Vat = 2}, 2)
+                new Tuple<Article, int>(new Article("1","a1","description",10,1,"image1"), 1),
+                new Tuple<Article, int>(new Article("2","a2","description",12,2,"image2"), 2)
             };
             var order = new Order(customer, articles);
 

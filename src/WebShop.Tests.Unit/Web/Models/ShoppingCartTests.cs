@@ -18,7 +18,7 @@ namespace WebShop.Tests.Unit.Web.Models
         public void AddItem()
         {
             var target = new ShoppingCart();
-            target.AddItem(new ArticleViewModel(new Article { Name = "Article A", Id = "1" }));
+            target.AddItem(new ArticleViewModel(new Article("1", "article A", "description", 12, 2, "image1")));
             Assert.AreEqual(1, target.Count());
         }
 
@@ -26,8 +26,8 @@ namespace WebShop.Tests.Unit.Web.Models
         public void AddItem_when_already_exist_dont_duplicate()
         {
             var target = new ShoppingCart();
-            target.AddItem(new ArticleViewModel(new Article { Name = "Article A", Id = "1" }));
-            target.AddItem(new ArticleViewModel(new Article { Name = "Article A", Id = "1" }));
+            target.AddItem(new ArticleViewModel(new Article("1", "article A", "description", 12, 2, "image1")));
+            target.AddItem(new ArticleViewModel(new Article("1", "article B", "description", 12, 2, "image1")));
             Assert.AreEqual(2, target.Count());
             Assert.AreEqual(1, target.Items.Count);
         }
@@ -36,7 +36,7 @@ namespace WebShop.Tests.Unit.Web.Models
         public void Clear_delete_all_items()
         {
             var target = new ShoppingCart();
-            target.AddItem(new ArticleViewModel(new Article { Name = "Article A", Id = "1" }));
+            target.AddItem(new ArticleViewModel(new Article("1", "article A", "description", 12, 2, "image1")));
             Assert.AreEqual(1, target.Count());
             target.Clear();
             Assert.IsEmpty(target.Items);

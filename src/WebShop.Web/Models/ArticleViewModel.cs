@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Linq;
 using WebShop.Domain;
 
 namespace WebShop.Web.Models

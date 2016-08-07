@@ -8,7 +8,9 @@ namespace WebShop.Domain
     public class Order
     {
         [PrimaryKey]
+        [StringLength(16)]
         public string Id { get; }
+        [StringLength(20)]
         public DateTime PlaceDate { get; private set; }
         public int CustomerId { get; private set; }
         public decimal SubTotal { get; private set; }

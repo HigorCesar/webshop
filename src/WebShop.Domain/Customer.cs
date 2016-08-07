@@ -1,5 +1,4 @@
-﻿using System;
-using ServiceStack.DataAnnotations;
+﻿using ServiceStack.DataAnnotations;
 
 namespace WebShop.Domain
 {

@@ -40,7 +40,7 @@ namespace WebShop.Tests.Unit.Web.Controllers
             var articleId = "1";
             repository
                 .Setup(r => r.GetArticle(It.IsAny<string>()))
-                .Returns(new Article { Id = articleId, Name = "Article 1" });
+                .Returns(new Article(articleId, "article 1", "description", 12, 2, "image1"));
 
             var target = new ArticlesRestController(repository.Object)
             {
@@ -59,8 +59,8 @@ namespace WebShop.Tests.Unit.Web.Controllers
                 .Setup(r => r.GetArticles())
                 .Returns(new List<Article>
                 {
-                    new Article { Id = "1", Name = "Article 1" },
-                    new Article { Id = "2", Name = "Article 2" }
+                    new Article("1", "article 1", "description", 11, 1, "image1"),
+                    new Article("2", "article 2", "description", 11, 1, "image1")
                 });
 
             var target = new ArticlesRestController(repository.Object)

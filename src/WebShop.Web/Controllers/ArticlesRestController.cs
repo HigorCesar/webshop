@@ -13,12 +13,12 @@ namespace WebShop.Web.Controllers
         {
             articleRepository = repository;
         }
-        [System.Web.Http.Route("api/articles")]
+        [Route("api/articles")]
         public IHttpActionResult Get()
         {
             return Ok(articleRepository.GetArticles().Select(a => new ArticleViewModel(a)));
         }
-        [System.Web.Http.Route("api/articles/{id}")]
+        [Route("api/articles/{id}")]
         public IHttpActionResult Get(string id)
         {
             var article = articleRepository.GetArticle(id);

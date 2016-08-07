@@ -97,6 +97,87 @@ namespace WebShop.Web.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Address is Required.
+        /// </summary>
+        public static string CustomerViewModelAddressIsRequired {
+            get {
+                return ResourceManager.GetString("CustomerViewModelAddressIsRequired", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to City is Required.
+        /// </summary>
+        public static string CustomerViewModelCityIsRequired {
+            get {
+                return ResourceManager.GetString("CustomerViewModelCityIsRequired", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Email is not valid.
+        /// </summary>
+        public static string CustomerViewModelEmailIsNotValid {
+            get {
+                return ResourceManager.GetString("CustomerViewModelEmailIsNotValid", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Email is Required.
+        /// </summary>
+        public static string CustomerViewModelEmailIsRequired {
+            get {
+                return ResourceManager.GetString("CustomerViewModelEmailIsRequired", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to First name is Required.
+        /// </summary>
+        public static string CustomerViewModelFirstNameIsRequired {
+            get {
+                return ResourceManager.GetString("CustomerViewModelFirstNameIsRequired", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to House number is Required.
+        /// </summary>
+        public static string CustomerViewModelHouseNumberIsRequired {
+            get {
+                return ResourceManager.GetString("CustomerViewModelHouseNumberIsRequired", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Last name is Required.
+        /// </summary>
+        public static string CustomerViewModelLastNameIsRequired {
+            get {
+                return ResourceManager.GetString("CustomerViewModelLastNameIsRequired", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Title is Required.
+        /// </summary>
+        public static string CustomerViewModelTitleIsRequired {
+            get {
+                return ResourceManager.GetString("CustomerViewModelTitleIsRequired", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to ZipCode is Required.
+        /// </summary>
+        public static string CustomerViewModelZipCodeIsRequired {
+            get {
+                return ResourceManager.GetString("CustomerViewModelZipCodeIsRequired", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Error.
         /// </summary>
         public static string Error {

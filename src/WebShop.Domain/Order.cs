@@ -8,7 +8,7 @@ namespace WebShop.Domain
     public class Order
     {
         [PrimaryKey]
-        public string Id { get; private set; }
+        public string Id { get; }
         public DateTime PlaceDate { get; private set; }
         public int CustomerId { get; private set; }
         public decimal SubTotal { get; private set; }
@@ -17,10 +17,6 @@ namespace WebShop.Domain
         [Reference]
         public List<OrderItem> Articles { get; set; }
 
-        public Order()
-        {
-
-        }
         public Order(Customer customer, IEnumerable<Tuple<Article, int>> articles)
         {
             Id = Guid.NewGuid().ToString("N");

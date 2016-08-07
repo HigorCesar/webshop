@@ -49,27 +49,17 @@ namespace WebShop.Web.Models
         {
             Items = new Dictionary<string, ShoppingCartItem>();
         }
-        public Decimal Subtotal
-        {
-            get { return Items.Sum(a => a.Value.Price()); }
-        }
-        public Decimal Vat
-        {
-            get { return Items.Sum(a => a.Value.Vat()); }
-        }
-        public Decimal Total
-        {
-            get { return Items.Sum(a => a.Value.Total()); }
-        }
-
         public void Clear()
         {
             Items = new Dictionary<string, ShoppingCartItem>();
         }
-
         public int Count()
         {
             return Items.Sum(a => a.Value.Quantity);
+        }
+        public IEnumerable<ShoppingCartItem> GetItems()
+        {
+            return Items.Select(i => i.Value);
         }
     }
 }

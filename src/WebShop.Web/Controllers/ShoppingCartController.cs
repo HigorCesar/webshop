@@ -1,10 +1,12 @@
 ﻿using System;
 using System.Linq;
+using System.Text.RegularExpressions;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Web.Mvc;
 using WebShop.Domain;
 using WebShop.Web.Models;
+using WebShop.Web.Resources;
 
 namespace WebShop.Web.Controllers
 {
@@ -39,15 +41,21 @@ namespace WebShop.Web.Controllers
 
         public ActionResult Checkout(ShoppingCart cart)
         {
-            return View(cart);
+            var checkoutViewModel = new CheckoutViewModel(cart);
+            return View(checkoutViewModel);
         }
 
         [HttpPost]
-        public async Task<ActionResult> Checkout(CustomerViewModel customer, ShoppingCart cart)
+        public async Task<ActionResult> Checkout(CheckoutViewModel viewModel, ShoppingCart cart)
         {
-            var domainCustomer = new Customer(customer.Title, customer.FirstName, customer.LastName, customer.Email,
-                customer.Address, customer.HouseNumber, customer.ZipCode, customer.City);
-            var articlesWithQuantity = cart.Items.Select(a => new Tuple<Article, int>(articleRepository.GetArticle(a.Value.Article.Id), a.Value.Quantity));
+            if (!ModelState.IsValid)
+            {
+                return View(viewModel);
+            }
+
+            var domainCustomer = new Customer(viewModel.Title, viewModel.FirstName, viewModel.LastName, viewModel.Email,
+                viewModel.Address, viewModel.HouseNumber, viewModel.ZipCode, viewModel.City);
+            var articlesWithQuantity = viewModel.Items.Select(a => new Tuple<Article, int>(articleRepository.GetArticle(a.Article.Id), a.Quantity));
             var order = new Order(domainCustomer, articlesWithQuantity);
             using (var cts = new CancellationTokenSource(TimeSpan.FromSeconds(1)))
             {
@@ -56,12 +64,12 @@ namespace WebShop.Web.Controllers
 
             cart.Clear();
 
-            return RedirectToAction("ThankYou", customer);
+            return RedirectToAction("ThankYou", new ThankYouViewModel(viewModel.Title));
         }
 
-        public ActionResult ThankYou(CustomerViewModel customer)
+        public ActionResult ThankYou(ThankYouViewModel model)
         {
-            return View(customer);
+            return View(model);
         }
 
     }

@@ -35,7 +35,7 @@ namespace WebShop.Tests.Unit.Web.Controllers
             var result = (ViewResult)target.Checkout(new ShoppingCart());
 
             Assert.IsNotNull(result);
-            Assert.IsNotNull(result.Model as ShoppingCart);
+            Assert.IsNotNull(result.Model as CheckoutViewModel);
         }
 
         [Test]
@@ -46,11 +46,11 @@ namespace WebShop.Tests.Unit.Web.Controllers
 
             var target = new ShoppingCartController(checkoutRepository.Object, articleRepository.Object);
 
-            var result = (ViewResult)target.ThankYou(new CustomerViewModel { Title = "Higor" });
-            var model = result.Model as CustomerViewModel;
+            var result = (ViewResult)target.ThankYou(new ThankYouViewModel("Higor"));
+            var model = result.Model as ThankYouViewModel;
             Assert.IsNotNull(result);
             Assert.IsNotNull(model);
-            Assert.AreEqual("Higor", model.Title);
+            Assert.AreEqual("Higor", model.Customer);
 
         }
 
@@ -68,11 +68,10 @@ namespace WebShop.Tests.Unit.Web.Controllers
 
             var target = new ShoppingCartController(checkoutRepository.Object, articleRepository.Object);
 
-            var customer = new CustomerViewModel { Title = "Higor" };
             var shoppingCart = new ShoppingCart();
             shoppingCart.AddItem(new ArticleViewModel(new Article { Id = "1", Name = "Article B" }));
 
-            var result = (RedirectToRouteResult)(await target.Checkout(customer, shoppingCart));
+            var result = (RedirectToRouteResult)(await target.Checkout(new CheckoutViewModel(), shoppingCart));
             Assert.IsNotNull(result);
             Assert.IsNotNull(result.RouteName);
 

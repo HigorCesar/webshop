@@ -1,4 +1,5 @@
-﻿<!DOCTYPE html>
+﻿@using WebShop.Web.Resources
+<!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8" />
@@ -37,7 +38,7 @@
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Overview(rest)", "AllArticles", "Articles")</li>
+                    <li>@Html.ActionLink(ConstantText.Overview, "AllArticles", "Articles")</li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
                     <li>
@@ -75,16 +76,16 @@
             $("#shopping-cart-dialog").dialog({
                 autoOpen: false,
                 resizable: false,
-                title: 'Your Shopping cart',
+                title: '@ConstantText.ShoppingCart',
                 modal: true,
                 buttons: [
                  {
-                     text: "Close",
+                     text: "@ConstantText.Close",
                      click: function () {
                          $(this).dialog("close");
                      }
                  }, {
-                     text: "Checkout",
+                     text: "@ConstantText.Checkout",
                      click: function () {
                          $(this).dialog("close");
                          window.location = '@Url.Action("Checkout","ShoppingCart")';

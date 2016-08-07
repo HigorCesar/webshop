@@ -2,10 +2,10 @@
 @model dynamic
 
 @{
-    ViewBag.Title = PageTitle.AllArticles;
+    ViewBag.Title = ConstantText.AllArticles;
 }
 
-<h2>All articles</h2>
+<h2>@ConstantText.AllArticles</h2>
 <script type="text/javascript">
     var dialog;
 
@@ -41,8 +41,8 @@
 <table id="all-articles" class="table table-striped">
     <thead>
         <tr>
-            <th>Name</th>
-            <th>Price</th>
+            <th>@ConstantText.ArticleName</th>
+            <th>@ConstantText.ArticlePrice</th>
         </tr>
     </thead>
     <tbody id="all-articles-body"></tbody>
@@ -53,26 +53,25 @@
         <div class="caption">
             <h4 class="group inner list-group-item-heading" id="article-name"></h4>
             <p id="article-description">
-
             </p>
             <div class="row">
                 <div class="col-xs-12 col-md-12 centering text-center">
                     <table class="table">
                         <tr>
-                            <td>Price</td>
+                            <td>@ConstantText.ArticlePrice</td>
                             <td id="article-price"></td>
                         </tr>
                         <tr>
-                            <td>Vat</td>
+                            <td>@ConstantText.ArticleVAT</td>
                             <td id="article-vat"></td>
                         </tr>
                         <tr>
-                            <td>Total</td>
-                            <td id="article-total"></td>
-                        </tr>
-                    </table>
+                            <td>@ConstantText.ArticleTotal</td>
+                                <td id="article-total"></td>
+                            </tr>
+                        </table>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-</div>

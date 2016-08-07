@@ -165,4 +165,61 @@
   <data name="CustomerViewModelCityIsRequired" xml:space="preserve">
     <value>City is Required</value>
   </data>
+  <data name="AddToCart" xml:space="preserve">
+    <value>Add to cart</value>
+  </data>
+  <data name="Article" xml:space="preserve">
+    <value>Article</value>
+  </data>
+  <data name="ArticleName" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <data name="ArticlePrice" xml:space="preserve">
+    <value>Price</value>
+  </data>
+  <data name="Articles" xml:space="preserve">
+    <value>Articles</value>
+  </data>
+  <data name="ArticleTotal" xml:space="preserve">
+    <value>Total</value>
+  </data>
+  <data name="ArticleVAT" xml:space="preserve">
+    <value>VAT</value>
+  </data>
+  <data name="Back" xml:space="preserve">
+    <value>back</value>
+  </data>
+  <data name="Close" xml:space="preserve">
+    <value>Close</value>
+  </data>
+  <data name="CustomerData" xml:space="preserve">
+    <value>Customer data</value>
+  </data>
+  <data name="GenericErrorMessage" xml:space="preserve">
+    <value>An error occurred while processing your request</value>
+  </data>
+  <data name="Next" xml:space="preserve">
+    <value>Next</value>
+  </data>
+  <data name="Overview" xml:space="preserve">
+    <value>Overview(rest)</value>
+  </data>
+  <data name="Previous" xml:space="preserve">
+    <value>Previous</value>
+  </data>
+  <data name="Quantity" xml:space="preserve">
+    <value>Quantity</value>
+  </data>
+  <data name="Submit" xml:space="preserve">
+    <value>Submit</value>
+  </data>
+  <data name="SubTotal" xml:space="preserve">
+    <value>Sub total</value>
+  </data>
+  <data name="Total" xml:space="preserve">
+    <value>Total</value>
+  </data>
+  <data name="TotalPerArticle" xml:space="preserve">
+    <value>Total(per article)</value>
+  </data>
 </root>

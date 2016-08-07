@@ -1,6 +1,7 @@
-﻿@model WebShop.Web.Models.ThankYouViewModel
+﻿@using WebShop.Web.Resources
+@model WebShop.Web.Models.ThankYouViewModel
 @{
-    ViewBag.Title = "Thank you";
+    ViewBag.Title = ConstantText.ThankYou;
 }
 
-<h2>@Model.Customer thank you!</h2>
+<h2>@Model.Customer @ConstantText.ThankYou</h2>

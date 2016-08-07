@@ -1,10 +1,10 @@
 ﻿@using WebShop.Web.Resources
 @model WebShop.Web.Models.ArticlePagingViewModel
 @{
-    ViewBag.Title = PageTitle.ArticleOverview;
+    ViewBag.Title = ConstantText.ArticleOverview;
 }
 
-<h2>Articles</h2>
+<h2>@ConstantText.Articles</h2>
 <link href="@Url.Content("~/Content/Articles/Index.css")" rel="stylesheet" type="text/css" />
 <script type="text/javascript">
     $().ready(function() {
@@ -41,9 +41,9 @@
     <div id="products" class="row list-group">
         <nav>
             <ul class="pager">
-                <li id="previous-page"><a href="#">Previous</a></li>
+                <li id="previous-page"><a href="#">@ConstantText.Previous</a></li>
                 <li id="page-number">@Model.Page</li>
-                <li id="next-page"><a href="#">Next</a></li>
+                <li id="next-page"><a href="#">@ConstantText.Next</a></li>
             </ul>
         </nav>
         <div id="product-list">

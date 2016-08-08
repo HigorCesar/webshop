@@ -17,8 +17,8 @@ namespace WebShop.Tests.Unit.Domain
               "Rio de janeiro");
             var articles = new List<Tuple<Article, int>>
             {
-                new Tuple<Article, int>(new Article {Name = "a1", Price = 10, Vat = 1}, 1),
-                new Tuple<Article, int>(new Article {Name = "a2", Price = 12, Vat = 2}, 2)
+                new Tuple<Article, int>(new Article("1", "article 1", "description", 10, 1, "image1"), 1),
+                new Tuple<Article, int>(new Article("2", "article 2", "description", 12, 2, "image1"), 2)
             };
             var target = new Order(customer, articles);
 

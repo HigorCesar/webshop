@@ -1,23 +1,24 @@
-﻿@model WebShop.Web.Models.ShoppingCart
+﻿@using WebShop.Web.Resources
+@model WebShop.Web.Models.ShoppingCart
 
 @{
-    ViewBag.Title = "Shopping Cart";
+    ViewBag.Title = ConstantText.ShoppingCart;
     Layout = "";
 }
 <table>
     <thead>
-    <tr>
-        <td>Article</td>
-        <td>Quantity</td>
-        <td>Price</td>
-    </tr>
-    </thead>
-    @foreach (var article in Model.Items.Select(a => a.Value))
-    {
         <tr>
-            <td>@article.Article.Name</td>
-            <td>@article.Quantity</td>
-            <td>@article.Article.FormattedPrice</td>
-        </tr>
-    }
+            <td>@ConstantText.Article</td>
+            <td>@ConstantText.Quantity</td>
+            <td>@ConstantText.ArticlePrice</td>
+    </tr>
+</thead>
+@foreach (var article in Model.Items.Select(a => a.Value))
+{
+    <tr>
+        <td>@article.Article.Name</td>
+        <td>@article.Quantity</td>
+        <td>@article.Article.FormattedPrice</td>
+    </tr>
+}
 </table>

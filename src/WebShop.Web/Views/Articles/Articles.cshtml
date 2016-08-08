@@ -1,5 +1,6 @@
+@using WebShop.Web.Resources
 @model IEnumerable<WebShop.Web.Models.ArticleViewModel>
-@foreach (var article in this.Model)
+@foreach (var article in Model)
 {
     <div class="item list-group-item  col-xs-4 col-lg-4">
         <div class="thumbnail">
@@ -18,8 +19,8 @@
                         </p>
                     </div>
                     <div class="col-xs-12 col-md-6">
-                        <a class="btn btn-success" href="@Url.Action("Details", new { Id = article.Id })">Details</a>
-                        <a class="btn btn-success add-to-cart" x-article-id="@article.Id">Add to cart</a>
+                        <a class="btn btn-success" href="@Url.Action("Details", new { Id = article.Id })">@ConstantText.ArticleDetails</a>
+                        <a class="btn btn-success add-to-cart" x-article-id="@article.Id">@ConstantText.AddToCart</a>
                     </div>
                 </div>
             </div>

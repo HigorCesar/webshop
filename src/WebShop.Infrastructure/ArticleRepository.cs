@@ -24,10 +24,12 @@ namespace WebShop.Infrastructure
                 throw new ArgumentNullException(nameof(articlesFile));
 
             var deserializer = new XmlSerializer(typeof(ArticleList));
-            var textReader = new StreamReader(articlesFile);
-            var response = (ArticleList)deserializer.Deserialize(textReader);
-            articles = response.Articles;
-            textReader.Close();
+            using (var textReader = new StreamReader(articlesFile))
+            {
+                var response = (ArticleList)deserializer.Deserialize(textReader);
+                articles = response.Articles;
+            }
+
 
         }
         public Paging<Article> GetArticles(int page, int pageSize)

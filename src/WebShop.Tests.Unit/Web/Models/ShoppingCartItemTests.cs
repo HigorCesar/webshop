@@ -14,7 +14,7 @@ namespace WebShop.Tests.Unit.Web.Models
         [Test]
         public void Constructor()
         {
-            var articleA = new ArticleViewModel(new Article { Name = "ArticleA", Id = "1", Price = 11, Vat = 1 });
+            var articleA = new ArticleViewModel(new Article("1", "article A", "description", 11, 1, "image1"));
             var target = new ShoppingCartItem(articleA);
 
             Assert.AreEqual(1, target.Quantity);
@@ -25,7 +25,7 @@ namespace WebShop.Tests.Unit.Web.Models
         [Test]
         public void AddArticle()
         {
-            var articleA = new ArticleViewModel(new Article { Name = "ArticleA", Id = "1", Price = 11, Vat = 1 });
+            var articleA = new ArticleViewModel(new Article("1", "article A", "description", 11, 1, "image1"));
             var target = new ShoppingCartItem(articleA);
             target.Add();
             target.Add();

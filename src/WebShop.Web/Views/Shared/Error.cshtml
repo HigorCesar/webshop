@@ -1,9 +1,10 @@
-﻿@model System.Web.Mvc.HandleErrorInfo
+﻿@using WebShop.Web.Resources
+@model HandleErrorInfo
 
 @{
-    ViewBag.Title = "Error";
+    ViewBag.Title = ConstantText.Error;
 }
 
-<h1 class="text-danger">Error.</h1>
-<h2 class="text-danger">An error occurred while processing your request.</h2>
+<h1 class="text-danger">@ConstantText.Error</h1>
+<h2 class="text-danger">@ConstantText.GenericErrorMessage.</h2>
 

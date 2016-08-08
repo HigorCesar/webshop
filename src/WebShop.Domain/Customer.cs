@@ -1,5 +1,4 @@
-﻿using System;
-using ServiceStack.DataAnnotations;
+﻿using ServiceStack.DataAnnotations;
 
 namespace WebShop.Domain
 {
@@ -7,19 +6,27 @@ namespace WebShop.Domain
     public class Customer
     {
         [PrimaryKey]
-        public string Id { get; private set; }
-        public string Title { get; private  set; }
+        [AutoIncrement]
+        public int Id { get; set; }
+        [StringLength(200)]
+        public string Title { get; private set; }
+        [StringLength(200)]
         public string FirstName { get; private set; }
+        [StringLength(200)]
         public string LastName { get; private set; }
+        [StringLength(400)]
         public string Address { get; private set; }
+        [StringLength(20)]
         public string HouseNumber { get; private set; }
+        [StringLength(20)]
         public string ZipCode { get; private set; }
+        [StringLength(200)]
         public string City { get; private set; }
+        [StringLength(200)]
         public string Email { get; private set; }
 
         public Customer(string title, string firstName, string lastName, string email, string address, string houseNumber, string zipCode, string city)
         {
-            Id = DateTime.UtcNow.ToString("yyyyMMddhhmmssfff");
             Title = title;
             FirstName = firstName;
             LastName = lastName;

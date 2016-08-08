@@ -9,6 +9,11 @@ namespace WebShop.Tests.Unit.Infrastructure.Repository
 {
     public class ArticleRepositoryTests
     {
+        private ResourceHelper resourceHelper;
+        public ArticleRepositoryTests()
+        {
+            resourceHelper = new ResourceHelper();
+        }
         [Test]
         public void GetArticles_null_path_throws_exception()
         {
@@ -18,7 +23,7 @@ namespace WebShop.Tests.Unit.Infrastructure.Repository
         [Test]
         public void GetArticles_one_article_mapping()
         {
-            var repo = new ArticleRepository("./resources/article_1.xml");
+            var repo = new ArticleRepository(resourceHelper.GetArticle1File());
             var target = repo.GetArticles(1, 10).Values.First();
 
             Assert.AreEqual("Domain-Driven Design: Tackling Complexity in the Heart of Software", target.Name);
@@ -32,14 +37,14 @@ namespace WebShop.Tests.Unit.Infrastructure.Repository
         [Test]
         public void GetArticles_only_2_articles()
         {
-            var target = new ArticleRepository("./resources/articles_2.xml");
+            var target = new ArticleRepository(resourceHelper.GetArticle2File());
             Assert.AreEqual(2, target.GetArticles(1, 10).Quantity);
         }
 
         [Test]
         public void GetArticles_22_articles()
         {
-            var target = new ArticleRepository("./resources/articles_22.xml");
+            var target = new ArticleRepository(resourceHelper.GetArticle22File());
             var result = target.GetArticles(3, 10);
             Assert.AreEqual(22, result.Quantity);
             Assert.AreEqual(2, result.Values.Count());
@@ -49,7 +54,7 @@ namespace WebShop.Tests.Unit.Infrastructure.Repository
         [Test]
         public void GetArticles_non_valid_page_returns_empty()
         {
-            var target = new ArticleRepository("./resources/articles_22.xml");
+            var target = new ArticleRepository(resourceHelper.GetArticle22File());
             var result = target.GetArticles(21, 10);
             Assert.AreEqual(22, result.Quantity);
             Assert.AreEqual(0, result.Values.Count());
@@ -58,21 +63,21 @@ namespace WebShop.Tests.Unit.Infrastructure.Repository
         [Test]
         public void GetArticle_null_when_do_not_find()
         {
-            var target = new ArticleRepository("./resources/articles_2.xml");
+            var target = new ArticleRepository(resourceHelper.GetArticle2File());
             Assert.IsNull(target.GetArticle("99"));
         }
 
         [Test]
         public void GetArticle()
         {
-            var target = new ArticleRepository("./resources/articles_2.xml");
+            var target = new ArticleRepository(resourceHelper.GetArticle2File());
             var article = target.GetArticle("1");
             Assert.AreEqual("1", article.Id);
         }
         [Test]
         public void GetArticles()
         {
-            var target = new ArticleRepository("./resources/articles_2.xml");
+            var target = new ArticleRepository(resourceHelper.GetArticle2File());
             Assert.AreEqual(2, target.GetArticles().Count());
         }
     }

@@ -98,6 +98,7 @@
     <Compile Include="Domain\PagingTests.cs" />
     <Compile Include="Infrastructure\Repository\ArticleRepositoryTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ResourceHelper.cs" />
     <Compile Include="Web\Controllers\ArticlesControllerTests.cs" />
     <Compile Include="Web\Controllers\ArticlesRestControllerTests.cs" />
     <Compile Include="Web\Controllers\ShoppingCartControllerTests.cs" />
@@ -126,6 +127,17 @@
       <Project>{bba71cc5-0673-4442-969c-0a27f9cec563}</Project>
       <Name>WebShop.Web</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\articles_2.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\articles_22.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\article_1.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading;
+﻿using System.Threading;
 using System.Threading.Tasks;
 using ServiceStack.Data;
 using ServiceStack.OrmLite;
@@ -26,12 +21,12 @@ namespace WebShop.Infrastructure
             using (var dbTrans = db.OpenTransaction())
             {
                 await db.SaveAsync(customer, false, cancellationToken);
-                await db.SaveAsync(order, false, cancellationToken);
+                await db.SaveAsync(order, true, cancellationToken);
                 dbTrans.Commit();
             }
 
         }
 
-       
+
     }
 }

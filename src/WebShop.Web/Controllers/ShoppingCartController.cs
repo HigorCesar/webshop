@@ -39,6 +39,9 @@ namespace WebShop.Web.Controllers
 
         public ActionResult Checkout(ShoppingCart cart)
         {
+            if (cart.IsEmpty())
+                return RedirectToAction("Index", "Articles");
+
             var checkoutViewModel = new CheckoutViewModel(cart);
             return View(checkoutViewModel);
         }

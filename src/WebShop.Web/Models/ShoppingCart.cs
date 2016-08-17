@@ -1,4 +1,6 @@
-﻿using System.Collections.Generic;
+﻿using System.Collections;
+using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 
 namespace WebShop.Web.Models
@@ -32,6 +34,7 @@ namespace WebShop.Web.Models
             Quantity++;
         }
     }
+
     public class ShoppingCart
     {
         public Dictionary<string, ShoppingCartItem> Items { get; private set; }
@@ -54,6 +57,11 @@ namespace WebShop.Web.Models
         public int Count()
         {
             return Items.Sum(a => a.Value.Quantity);
+        }
+
+        public bool IsEmpty()
+        {
+            return !Items.Any();
         }
         public IEnumerable<ShoppingCartItem> GetItems()
         {

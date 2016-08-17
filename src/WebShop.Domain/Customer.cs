@@ -1,4 +1,5 @@
-﻿using ServiceStack.DataAnnotations;
+﻿using System;
+using ServiceStack.DataAnnotations;
 
 namespace WebShop.Domain
 {
@@ -6,8 +7,8 @@ namespace WebShop.Domain
     public class Customer
     {
         [PrimaryKey]
-        [AutoIncrement]
-        public int Id { get; set; }
+        [StringLength(16)]
+        public string Id { get; set; }
         [StringLength(200)]
         public string Title { get; private set; }
         [StringLength(200)]
@@ -27,6 +28,7 @@ namespace WebShop.Domain
 
         public Customer(string title, string firstName, string lastName, string email, string address, string houseNumber, string zipCode, string city)
         {
+            Id = Guid.NewGuid().ToString("N");
             Title = title;
             FirstName = firstName;
             LastName = lastName;

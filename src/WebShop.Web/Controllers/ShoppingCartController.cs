@@ -53,7 +53,7 @@ namespace WebShop.Web.Controllers
 
             var domainCustomer = new Customer(viewModel.Title, viewModel.FirstName, viewModel.LastName, viewModel.Email,
                 viewModel.Address, viewModel.HouseNumber, viewModel.ZipCode, viewModel.City);
-            var articlesWithQuantity = viewModel.Items.Select(a => new Tuple<Article, int>(articleRepository.GetArticle(a.Article.Id), a.Quantity));
+            var articlesWithQuantity = cart.Items.Values.Select(i => new Tuple<Article, int>(articleRepository.GetArticle(i.Article.Id), i.Quantity));
             var order = new Order(domainCustomer, articlesWithQuantity);
             using (var cts = new CancellationTokenSource(TimeSpan.FromSeconds(1)))
             {
